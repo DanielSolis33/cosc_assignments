@@ -1,3 +1,4 @@
+
 package cosc_assignments;
 
 import java.util.Scanner; 
@@ -121,4 +122,21 @@ public class KBytes {
 			        
 			            scanner.close();  
 		             }
+		        }
+		            public static double calculateTotal(int itemCount, Scanner scanner) {
+		                double totalPrice = 0.0;
+
+		                // Loop to get the price of each item and calculate the total
+		                for (int i = 1; i <= itemCount; i++) {
+		                    System.out.print("Enter the price of item " + i + ": ");
+		                    double price = scanner.nextDouble();
+		                    totalPrice += price;  // Add the price of the item to the total
+		                }
+
+		                return totalPrice;
+		            }
+
+		            public static double applyTax(double total, double tax) {
+		                return total * (1 + tax);  // Apply tax and return the new total
+		            }
 		        }
