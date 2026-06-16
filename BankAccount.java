@@ -47,7 +47,7 @@ public class BankAccount {
 		       		case "1":
 		       			getBalance(currentBalance);
 		       			System.out.println();
-		               break;
+		               break; //using breaks to make sure the program doesn't continue automatically
 		               
 		       		case "2":
 		       			System.out.println( "Enter the amount you would like to deposit: ");
@@ -58,7 +58,7 @@ public class BankAccount {
 		       			
 		       			//just in case they decide to try and enter a negative number!
 		       			if(deposit > 0) {
-		       				currentBalance = addMoney(currentBalance, deposit);
+		       				currentBalance = depositMoney(currentBalance, deposit);
 		       				System.out.println("ChaChing! Your money is deposited.");
 		       				System.out.println();
 		       			
@@ -83,7 +83,7 @@ public class BankAccount {
 		       				
 		       				//prevents negatives and overdrafts ... if only REAL banks protected overdrafts!
 		       				if (withdrawal >0 && withdrawal <= currentBalance) {
-		       					currentBalance = subtractMoney(currentBalance, withdrawal);
+		       					currentBalance = withdrawMoney(currentBalance, withdrawal);
 		       					System.out.println("Withdrawn Successfully");
 		       					System.out.println();
 		       			} else if (withdrawal <= 0) {
@@ -120,12 +120,12 @@ public class BankAccount {
 			System.out.println();
 		}
 		
-		 private static double addMoney(double currentBalance, double depositAmount) {
+		 private static double depositMoney(double currentBalance, double depositAmount) {
 				
 				return currentBalance + depositAmount;
 		
 		 }
-		private static double subtractMoney(double currentBalance, double withdrawalAmount) {
+		private static double withdrawMoney(double currentBalance, double withdrawalAmount) {
 		
 			return currentBalance - withdrawalAmount;
 		}
